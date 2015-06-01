@@ -11,6 +11,7 @@
 angular
   .module 'pictureMappingApp', [
     'ngRoute'
+    'uiGmapgoogle-maps'
   ]
   .config ($routeProvider) ->
     $routeProvider
@@ -22,4 +23,9 @@ angular
         controller: 'AboutCtrl'
       .otherwise
         redirectTo: '/'
-
+  .config (uiGmapGoogleMapApiProvider) ->
+    uiGmapGoogleMapApiProvider
+      .configure
+        key: 'AIzaSyDgEo9hjCdBFtgtxxLeQx2mb2uo-i3BShs',
+        v: '3.17',
+        libraries: 'weather,geometry,visualization'
