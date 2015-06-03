@@ -9,16 +9,19 @@
 ###
 class MainCtrl
   constructor: ($scope, $log, uiGmapGoogleMapApi, uiGmapIsReady) ->
+    startCenter =
+      latitude: 51.3
+      longitude: -117.5
 
     $scope.mapInstance = null
 
     $scope.map =
       center:
-        latitude: 45
-        longitude: -73
+        latitude: startCenter.latitude
+        longitude: startCenter.longitude
       zoom: 8
-      #options:
-        #valuemapTypeId: new google.maps.MapTypeId.SATELLITE
+      options:
+        mapTypeId: google.maps.MapTypeId.HYBRID
       events:
         tilesloaded: (map) ->
           $scope.$apply ->
@@ -26,14 +29,21 @@ class MainCtrl
 
     $scope.recenterMap = ->
       if $scope.mapInstance
-        $scope.mapInstance.panTo(new google.maps.LatLng(45, -73))
+        $scope.mapInstance.panTo(new google.maps.LatLng(startCenter.latitude, startCenter.longitude))
+
+    # Add marker
+    $scope.mymarker = new google.maps.Marker
+        map: $scope.mapInstance
+        animation: google.maps.Animation.DROP
+        position: new google.maps.LatLng(52, 118)
+        title: 'foo'
+
 
     #make sure we get the map after it has loaded
     uiGmapIsReady.promise(1).then (maps) ->
       maps.forEach (map) ->
         map = map.map
         $log.log('Map has loaded')
-        map.setMapTypeId google.maps.MapTypeId.TERRAIN
         $scope.mapInstance = map
 
 

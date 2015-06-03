@@ -41,16 +41,17 @@
             </ul>
           </div>
         </div>
-      <!-- END NAVBAR -->
       </div>
+      <!-- END NAVBAR -->
 
-    <div class="container">
-      <div ng-view=""></div>
+    <div class="container-fluid">
+      <!-- view animate is not working -->
+      <div ng-view class="view-animate"></div>
     </div>
 
     <div class="footer">
-      <div class="container">
-        <p><span class="glyphicon glyphicon-copyright-mark"></span> samBergeron 2015</p>
+      <div class="container-fluid">
+        <p><span class="glyphicon glyphicon-copyright-mark"></span> Sam Bergeron 2015</p>
       </div>
     </div>
 
@@ -65,7 +66,7 @@
        ga('create', 'UA-XXXXX-X');
        ga('send', 'pageview');
     </script>
-
+    <script src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -74,6 +75,7 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/lodash/lodash.js"></script>
     <script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

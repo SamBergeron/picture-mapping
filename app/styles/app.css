@@ -1,2 +1,63 @@
 .map-canvas { height: 400px; }
+
 .angular-google-map-container { height: 400px; }
+
+.drop-box {
+    background: #F8F8F8;
+    border: 5px dashed #DDD;
+    width: 200px;
+    height: 65px;
+    text-align: center;
+    padding-top: 25px;
+    margin: 10px;
+}
+
+.fade-switch {
+}
+
+.fade-switch.ng-leave, .fade-switch.ng-enter{
+  -webkit-transition:all linear 1.5s;
+  transition:all linear 1.5s;
+}
+
+.fade-switch.ng-enter {
+  opacity: 1;
+}
+
+.fade-switch.ng-leave {
+  opacity: 0;
+}
+
+.my-slide-container {
+  position:relative;
+}
+.my-slide-animation.ng-enter, .my-slide-animation.ng-leave {
+  -webkit-transition:0.5s linear all;
+  transition:0.5s linear all;
+
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:600px;
+}
+
+.my-slide-animation.ng-enter {
+  z-index:100;
+  top:600px;
+  opacity:0;
+}
+.my-slide-animation.ng-enter.ng-enter-active {
+  top:0;
+  opacity:1;
+}
+
+.my-slide-animation.ng-leave {
+  z-index:101;
+  top:0;
+  opacity:1;
+}
+.my-slide-animation.ng-leave.ng-leave-active {
+  top:-600px;
+  opacity:0;
+}

@@ -23,6 +23,7 @@ module.exports = (config) ->
       'bower_components/angular-route/angular-route.js'
       'bower_components/lodash/lodash.js'
       'bower_components/angular-google-maps/dist/angular-google-maps.js'
+      'bower_components/angular-animate/angular-animate.js'
       'bower_components/angular-mocks/angular-mocks.js'
       # endbower
       # bower:coffee
