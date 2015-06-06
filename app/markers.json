@@ -18,5 +18,40 @@
     "latitude": "50.954528",
     "longitude": "-118.070146",
     "title" : "Montana Peak"
+  },
+  {
+    "id": "4",
+    "animation": "google.maps.Animation.DROP",
+    "latitude": "50.947210",
+    "longitude": "-118.070838",
+    "title" : "Kokanee Peak"
+  },
+  {
+    "id": "5",
+    "animation": "google.maps.Animation.DROP",
+    "latitude": "51.284364",
+    "longitude": "-117.559961",
+    "title" : "Cheops Mountain STS Couloir"
+  },
+  {
+    "id": "6",
+    "animation": "google.maps.Animation.DROP",
+    "latitude": "51.311348",
+    "longitude": "-117.577142",
+    "title" : "Ursus Minor Mountain"
+  },
+  {
+    "id": "7",
+    "animation": "google.maps.Animation.DROP",
+    "latitude": "51.302349",
+    "longitude": "-117.585946",
+    "title" : "Video Peak"
+  },
+  {
+    "id": "8",
+    "animation": "google.maps.Animation.DROP",
+    "latitude": "51.296874",
+    "longitude": "-117.591284",
+    "title" : "Balu Peak (8812)"
   }
 ]

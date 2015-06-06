@@ -42,7 +42,7 @@ class MainCtrl
 
     $scope.centerOnMarker = (marker) ->
       $scope.recenterMap(marker.latitude, marker.longitude)
-      $scope.mapInstance.setZoom(12)
+      $scope.mapInstance.setZoom(14)
 
     #If they ever decide to make this work everywhere on the map it would be cool
     #Right now you can test it if you're in a big city (AKA it works in NYC)
@@ -51,11 +51,6 @@ class MainCtrl
         tilt = $scope.mapInstance.getTilt()
         $scope.mapInstance.setTilt(45)
         $scope.mapInstance.setHeading(90)
-
-    $scope.onClick = (show) ->
-      show = !show
-      $log.log(show)
-
 
     #make sure we get the map after it has loaded
     uiGmapIsReady.promise(1).then (maps) ->
