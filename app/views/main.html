@@ -1,21 +1,29 @@
 <div class="page-header">
   <h2 class="text-left">Example Google maps with pictures</h2>
-  <p class="text-left">
-    Centered on Latitude: {{map.center.latitude}}, Longitude {{map.center.longitude}}
-    <button class="btn btn-xs btn-info" ng-click="recenterMap()">
-      Recenter
-    </button>
-  </p>
 </div>
 
 <div class="row">
   <div class="col-sm-9">
-    <ui-gmap-google-map center='map.center' zoom='map.zoom' events='map.events'
-      options='map.options' refresh='true' events='map.events'>
+    <ui-gmap-google-map center="map.center" zoom="map.zoom "events="map.events"
+      options="map.options" refresh="true" events="map.events" control="map.control">
+      <ui-gmap-markers models="markers" coords="'self'" icon="'icon'" >
+        <ui-gmap-windows show="show">
+            <div ng-non-bindable>{{title}}</div>
+        </ui-gmap-windows>
+      </ui-gmap-markers>
     </ui-gmap-google-map>
   </div>
 
   <div class="col-sm-3">
+    <div class="container-fluid">
+      <ul>
+        <li ng-repeat="marker in markers"><a ng-click="centerOnMarker(marker)">{{marker.title}}</a></li>
+        <button class="btn btn-xs btn-info" ng-click="">
+          Recenter
+        </button>
+      </ul>
+      {{markers}}
+    </div>
   </div>
 
 </div>

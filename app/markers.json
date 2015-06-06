@@ -1,0 +1,22 @@
+[{
+    "id": "0",
+    "animation": "google.maps.Animation.DROP",
+    "latitude": "50.963426",
+    "longitude": "-118.089938",
+    "title" : "Mount Mackenzie"
+  },
+  {
+    "id": "1",
+    "animation": "google.maps.Animation.DROP",
+    "latitude": "50.932107",
+    "longitude":  "-118.287929",
+    "title" : "Mount MacPherson"
+  },
+  {
+    "id": "3",
+    "animation": "google.maps.Animation.DROP",
+    "latitude": "50.954528",
+    "longitude": "-118.070146",
+    "title" : "Montana Peak"
+  }
+]
