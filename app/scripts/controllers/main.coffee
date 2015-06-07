@@ -14,19 +14,22 @@ class MainCtrl
 
     # Add markers from json file
     $scope.markers = []
-    $http.get('markers.json').success (res) ->
-      for marker in res
-        #Toggle window on click for marker
+    $scope.zones = []
+    $http.get('markers.json').success (response) ->
+      for marker in response
+        if marker.zone !in $scope.zones
+          $scope.zones.push(marker.zone)
         $scope.markers.push(marker)
-      $log.log 'Here are the markers: ' + $scope.markers
+      #$log.log 'Here are the markers: ' + $scope.markers
     .error (res) ->
-      $log.log 'Loading markers has failed ' + res
+      $log.log 'Loading markers has failed ' + response
+
 
     $scope.map =
       control: {}
       center:
-        latitude: 51.222657326976254
-        longitude: -117.70599365234375
+        latitude: 51.19512634313609
+        longitude: -117.21160888671875
       zoom: 9
       tilt: 45
       options:
@@ -41,6 +44,7 @@ class MainCtrl
         $scope.mapInstance.panTo(new google.maps.LatLng(lat, long))
 
     $scope.centerOnMarker = (marker) ->
+      #TODO: make camera transitions smoother
       $scope.recenterMap(marker.latitude, marker.longitude)
       $scope.mapInstance.setZoom(14)
 

@@ -1,14 +1,12 @@
-<div class="page-header">
-  <h2 class="text-left">Example Google maps with pictures</h2>
-</div>
-
 <div class="row">
   <div class="col-sm-9">
     <ui-gmap-google-map center="map.center" zoom="map.zoom "events="map.events"
       options="map.options" refresh="true" events="map.events" control="map.control">
       <ui-gmap-markers models="markers" coords="'self'" icon="'icon'" >
         <ui-gmap-windows show="show">
-            <div ng-non-bindable>{{title}}</div>
+            <div ng-non-bindable>
+              <img class="map-img" src="{{imgUrl}}"/>
+            </div>
         </ui-gmap-windows>
       </ui-gmap-markers>
     </ui-gmap-google-map>
@@ -16,13 +14,15 @@
 
   <div class="col-sm-3">
     <div class="container-fluid">
-      <ul>
-        <li ng-repeat="marker in markers"><a ng-click="centerOnMarker(marker)">{{marker.title}}</a></li>
-        <button class="btn btn-xs btn-info" ng-click="">
-          Recenter
-        </button>
+      <ul ng-repeat="z in zones">
+        <b><u>{{z}}</u></b>
+        <li class="list-unstyled" ng-repeat="marker in markers | filter: zone=z ">
+          <i class="fa fa-tree"></i>
+          <a ng-click="centerOnMarker(marker)">{{marker.title}}</a>
+        </li>
       </ul>
-      {{markers}}
+      <!--{{map.center}}
+      {{markers}} -->
     </div>
   </div>
 
